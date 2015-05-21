@@ -15,7 +15,7 @@ public class FindPriceInMemoryCatalogTest extends CatalogContract {
     }
 
     @Override
-    protected Catalog catalogWithout(String barcodeToAvoid) {
+    protected Catalog catalogWithout(final String barcodeToAvoid) {
         return new InMemoryCatalog(new HashMap<String, Price>() {{
             put("not " + barcodeToAvoid, Price.cents(0));
             put("certainly not " + barcodeToAvoid, Price.cents(7873));
